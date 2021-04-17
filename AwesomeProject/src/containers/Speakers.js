@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, FlatList, Text} from 'react-native';
+import {View, FlatList, Text, Image} from 'react-native';
 import {speakers} from '../data/speakers.json';
 
 import styles from './styles/sharedStyles.js';
@@ -12,6 +12,8 @@ function Speakers() {
         keyExtractor={(item) => item.id}
         renderItem={renderItem}
         ItemSeparatorComponent={SeparatorComponent}
+        ListHeaderComponent={HeaderComponent}
+        ListFooterComponent={FooterComponent}
       />
     </View>
   );
@@ -36,6 +38,28 @@ function SpeakerList({id, name, bio}) {
 
 function SeparatorComponent() {
   return <View style={styles.separatorStyle} />;
+}
+
+function HeaderComponent() {
+  return (
+    <View style={styles.sectionContainer}>
+      <Image
+        style={styles.headerImage}
+        source={require('../images/girl.png')}></Image>
+      <Text style={styles.sectionDescription}>Speakers Lineup!</Text>
+    </View>
+  );
+}
+
+function FooterComponent() {
+  return (
+    <View style={styles.footerContainer}>
+      <Image
+        style={styles.footerImage}
+        source={require('../images/G.png')}></Image>
+      <Text style={styles.sectionDescription}>All rights reserved</Text>
+    </View>
+  );
 }
 
 export default Speakers;

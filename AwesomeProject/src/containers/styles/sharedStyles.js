@@ -28,6 +28,11 @@ export default StyleSheet.create({
     marginTop: 32,
     paddingHorizontal: 24,
   },
+  footerContainer: {
+    marginTop: 32,
+    marginBottom: 20,
+    paddingHorizontal: 24,
+  },
   sectionTitle: {
     fontSize: 24,
     fontWeight: '600',
@@ -95,5 +100,15 @@ export default StyleSheet.create({
     backgroundColor: 'lightsalmon',
     paddingTop: 2,
     marginTop: 25,
+  },
+  headerImage: {
+    width: '100%',
+    height: 250,
+    resizeMode: 'cover',
+  },
+  footerImage: {
+    width: 75,
+    height: 75,
+    resizeMode: 'cover',
   },
 });
