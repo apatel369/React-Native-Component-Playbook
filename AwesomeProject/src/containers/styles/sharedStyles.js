@@ -46,7 +46,7 @@ export default StyleSheet.create({
     textAlign: 'center',
   },
   sectionDescriptionStory: {
-    marginTop: 8,
+    marginTop: 15,
     fontSize: 20,
     fontWeight: '400',
     color: 'white',
@@ -64,6 +64,12 @@ export default StyleSheet.create({
   storyImage: {
     width: 700,
     height: 700,
+    resizeMode: 'cover',
+    position: 'absolute',
+  },
+  storyImageSmall: {
+    width: 120,
+    height: 120,
     resizeMode: 'cover',
     position: 'absolute',
   },
