@@ -3,17 +3,17 @@ export default StyleSheet.create({
   storyContainer: {
     backgroundColor: 'black',
     width: '100%',
-    height: '100%'
+    height: '100%',
   },
   storyInnerContainer: {
     alignContent: 'center',
     paddingBottom: 10,
     paddingTop: 10,
     paddingLeft: 10,
-    paddingRight: 10
+    paddingRight: 10,
   },
   mainContainer: {
-    flex:1,
+    flex: 1,
   },
   scrollView: {
     width: '100%',
@@ -89,5 +89,11 @@ export default StyleSheet.create({
     fontWeight: '400',
     color: 'black',
     textAlign: 'center',
+  },
+  separatorStyle: {
+    height: 1,
+    backgroundColor: 'lightsalmon',
+    paddingTop: 2,
+    marginTop: 25,
   },
 });

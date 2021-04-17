@@ -11,6 +11,7 @@ function Speakers() {
         data={speakers}
         keyExtractor={(item) => item.id}
         renderItem={renderItem}
+        ItemSeparatorComponent={SeparatorComponent}
       />
     </View>
   );
@@ -31,6 +32,10 @@ function SpeakerList({id, name, bio}) {
       <Text style={styles.sectionDescription}>{'Bio: ' + bio}</Text>
     </View>
   );
+}
+
+function SeparatorComponent() {
+  return <View style={styles.separatorStyle} />;
 }
 
 export default Speakers;
