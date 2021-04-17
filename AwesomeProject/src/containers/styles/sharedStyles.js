@@ -1,5 +1,20 @@
 import {StyleSheet, Pressable} from 'react-native';
 export default StyleSheet.create({
+  storyContainer: {
+    backgroundColor: 'black',
+    width: '100%',
+    height: '100%'
+  },
+  storyInnerContainer: {
+    alignContent: 'center',
+    paddingBottom: 10,
+    paddingTop: 10,
+    paddingLeft: 10,
+    paddingRight: 10
+  },
+  mainContainer: {
+    flex:1,
+  },
   scrollView: {
     width: '100%',
     height: '100%',
