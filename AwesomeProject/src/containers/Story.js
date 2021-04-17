@@ -1,11 +1,11 @@
 import React from 'react';
-import {ScrollView, View, Text, Image} from 'react-native';
+import {ScrollView, View, Text, Image, Pressable} from 'react-native';
 
 import styles from './styles/sharedStyles.js';
 
 function Story() {
   return (
-    <ScrollView style={styles.storyContainer} contentContainerStyle={styles.storyInnerContainer} stickyHeaderIndices={[0, 1]} indicatorStyle="white" pagingEnabled> 
+    <ScrollView ref={a => (this.scroll = a)} style={styles.storyContainer} scrollEnabled scrollsToTop contentContainerStyle={styles.storyInnerContainer} stickyHeaderIndices={[0, 1]} indicatorStyle="white" pagingEnabled> 
       <Image
         style={styles.storyImageSmall}
         source={require('../images/shutterstock_211091626.png')}
@@ -19,6 +19,8 @@ function Story() {
         </View>
       </View>
       <View>
+        <Pressable onPress={() => this.scroll.scrollToEnd({animated: true, duration:500})}><Text style={styles.sectionDescriptionStory}>Go to End</Text></Pressable>
+        
         <Text style={styles.sectionDescriptionStory}>
           This is going to be a lengthy
         </Text>
@@ -49,6 +51,11 @@ function Story() {
         Quos, accusamus error! Soluta est optio nobis alias officiis. Adipisci voluptatum quo assumenda alias ullam eligendi esse maxime voluptates saepe veniam. Quasi, voluptates nam eum facere voluptatibus est pariatur quas.
         Itaque maxime repudiandae nihil eligendi! Iusto laboriosam rerum tempora laborum, sed facilis molestias officia, accusantium deserunt accusamus, eos a? Sit odit cupiditate delectus at velit labore reiciendis adipisci ex fugit.
         </Text>
+        <Text style={styles.sectionDescriptionStory}>
+           End of story
+        </Text>
+        <Pressable onPress={() => this.scroll.scrollTo({x:100, y:100, animated: true})}><Text style={styles.sectionDescriptionStory}>Go to Top</Text></Pressable>
+
       </View>
         
     
