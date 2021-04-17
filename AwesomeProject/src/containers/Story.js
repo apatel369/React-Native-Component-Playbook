@@ -5,7 +5,7 @@ import styles from './styles/sharedStyles.js';
 
 function Story() {
   return (
-    <ScrollView style={styles.storyContainer} contentContainerStyle={styles.storyInnerContainer} stickyHeaderIndices={[0, 1]}>
+    <ScrollView style={styles.storyContainer} contentContainerStyle={styles.storyInnerContainer} stickyHeaderIndices={[0, 1]} indicatorStyle="white" pagingEnabled> 
       <Image
         style={styles.storyImageSmall}
         source={require('../images/shutterstock_211091626.png')}
