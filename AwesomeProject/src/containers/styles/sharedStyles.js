@@ -111,4 +111,16 @@ export default StyleSheet.create({
     height: 75,
     resizeMode: 'cover',
   },
+  headerContainer: {
+    paddingHorizontal: 25,
+    marginBottom: 10,
+    backgroundColor: 'lightsalmon',
+    borderRadius: 6,
+  },
+  headerTitle: {
+    fontSize: 24,
+    fontWeight: '600',
+    color: 'black',
+    textAlign: 'center',
+  },
 });
