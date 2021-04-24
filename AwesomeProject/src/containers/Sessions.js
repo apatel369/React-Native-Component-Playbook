@@ -1,5 +1,5 @@
 import React from 'react';
-import {SectionList, Text, View} from 'react-native';
+import {SectionList, Text, View, Image} from 'react-native';
 import {sessions} from '../data/sessions.json';
 import styles from './styles/sharedStyles';
 
@@ -11,7 +11,11 @@ function Sessions() {
         renderItem={renderItem}
         renderSectionHeader={renderSectionHeader}
         keyExtractor={(index) => index}
-        stickySectionHeadersEnabled></SectionList>
+        stickySectionHeadersEnabled
+        ItemSeparatorComponent={SeparatorComponent}
+        ListFooterComponent={FooterComponent}
+        ListHeaderComponent={HeaderComponent}
+      />
     </View>
   );
 }
@@ -45,5 +49,31 @@ const SessionsList = ({id, name, speaker, desc}) => {
     </View>
   );
 };
+
+function SeparatorComponent() {
+  return <View style={styles.separatorStyle} />;
+}
+
+function HeaderComponent() {
+  return (
+    <View style={styles.sectionContainer}>
+      <Image
+        style={styles.headerImage}
+        source={require('../images/sec2.jpg')}></Image>
+      <Text style={styles.sectionDescription}>Sessions Lineup!</Text>
+    </View>
+  );
+}
+
+function FooterComponent() {
+  return (
+    <View style={styles.footerContainer}>
+      <Image
+        style={styles.footerImage}
+        source={require('../images/G.png')}></Image>
+      <Text style={styles.sectionDescription}>All rights reserved</Text>
+    </View>
+  );
+}
 
 export default Sessions;
