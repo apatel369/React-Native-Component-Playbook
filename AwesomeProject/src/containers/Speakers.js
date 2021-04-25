@@ -1,20 +1,68 @@
-import React from 'react';
-import {View, FlatList, Text, Image} from 'react-native';
+import React, {useState} from 'react';
+import {View, FlatList, Text, Image, Pressable} from 'react-native';
+import {TextInput} from 'react-native-gesture-handler';
 import {speakers} from '../data/speakers.json';
 
 import styles from './styles/sharedStyles.js';
 
 function Speakers() {
+  const [filteredSpeakers, setFilteredSpeakers] = useState(speakers);
+
+  function getSearchText(text) {
+    let fileredSpeakersList = speakers.filter((value) =>
+      value.sessions[0].name.toLowerCase().includes(text.toLowerCase()),
+    );
+    setFilteredSpeakers(fileredSpeakersList);
+  }
+
   return (
     <View>
+      <SearchSessions getSearchText={getSearchText} />
       <FlatList
-        data={speakers}
+        data={filteredSpeakers}
         keyExtractor={(item) => item.id}
         renderItem={renderItem}
         ItemSeparatorComponent={SeparatorComponent}
         ListHeaderComponent={HeaderComponent}
         ListFooterComponent={FooterComponent}
       />
+    </View>
+  );
+}
+
+function SearchSessions(props) {
+  const [searchText, setSearchText] = useState('');
+
+  const handleSearch = (text) => {
+    setSearchText(text);
+    props.getSearchText(text);
+  };
+
+  const clearSearch = () => {
+    this.textInput.clear();
+    props.getSearchText('');
+  };
+
+  return (
+    <View style={styles.container}>
+      <TextInput
+        ref={(ref) => {
+          this.textInput = ref;
+        }}
+        style={styles.searchInput}
+        value={searchText}
+        onChangeText={(text) => handleSearch(text)}
+        placeholder={'Search Sessions'}
+        returnKeyType={'go'}
+        autoCorrect={false}
+        autoFocus
+      />
+      <Pressable onPress={clearSearch} style={styles.clearContainer}>
+        <Image
+          style={styles.clearImage}
+          source={require('../images/multiply-1_Orange.png')}
+        />
+      </Pressable>
     </View>
   );
 }

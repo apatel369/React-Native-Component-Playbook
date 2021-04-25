@@ -123,4 +123,17 @@ export default StyleSheet.create({
     color: 'black',
     textAlign: 'center',
   },
+  clearContainer: {
+    backgroundColor: 'white',
+    flexDirection: 'column',
+    paddingRight: 50,
+    paddingBottom: 1,
+    justifyContent: 'center',
+    borderTopLeftRadius: 10,
+    borderBottomLeftRadius: 10,
+  },
+  clearImage: {
+    height: 20,
+    width: 20,
+  },
 });
