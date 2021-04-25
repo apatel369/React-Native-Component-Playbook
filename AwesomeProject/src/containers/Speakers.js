@@ -25,6 +25,8 @@ function Speakers() {
         ItemSeparatorComponent={SeparatorComponent}
         ListHeaderComponent={HeaderComponent}
         ListFooterComponent={FooterComponent}
+        keyboardDismissMode={'on-drag'}
+        keyboardShouldPersistTaps={'always'}
       />
     </View>
   );
